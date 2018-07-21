@@ -25,10 +25,17 @@ public class StandardServiceImpl implements StandardService {
 		standardRepository.save(standard);
 	}
 
-	/*@Override
+	@Override
 	public Page<Standard> findPageData(Pageable pageable) {
 		return standardRepository.findAll(pageable);
-	}*/
+	}
+
+	//查询所有的收派标准显示到快递员的位置
+	@Override
+	public List<Standard> findAll() {
+
+		return standardRepository.findAll();
+	}
 
 
 }

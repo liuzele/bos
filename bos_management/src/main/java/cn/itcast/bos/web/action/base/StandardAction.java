@@ -1,6 +1,7 @@
 package cn.itcast.bos.web.action.base;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import org.apache.struts2.convention.annotation.Action;
@@ -48,7 +49,7 @@ public class StandardAction extends ActionSupport implements ModelDriven<Standar
 		return SUCCESS;
 	}
 
-	/*// 属性驱动
+	// 属性驱动
 	private int page;
 	private int rows;
 
@@ -68,7 +69,7 @@ public class StandardAction extends ActionSupport implements ModelDriven<Standar
 		Page<Standard> pageData = standardService.findPageData(pageable);
 
 		// 返回客户端数据 需要 total 和 rows
-		Map<String, Object> result = new HashMap<String, Object>();
+		Map<String, Object> result = new HashMap<>();
 		result.put("total", pageData.getNumberOfElements());
 		result.put("rows", pageData.getContent());
 
@@ -76,6 +77,14 @@ public class StandardAction extends ActionSupport implements ModelDriven<Standar
 		ActionContext.getContext().getValueStack().push(result);
 
 		return SUCCESS;
-	}*/
+	}
+
+	//快递员的取派标准
+	@Action(value = "standard_findAll", results = { @Result(name = "success", type = "json") })
+	public String findAll() {
+		List<Standard> standards = standardService.findAll();
+		ActionContext.getContext().getValueStack().push(standards);
+		return SUCCESS;
+	}
 
 }

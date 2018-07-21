@@ -15,7 +15,8 @@ import cn.itcast.bos.domain.base.Standard;
 public interface StandardService {
 	public void save(Standard standard);
 
-	/*// 分页查询 
+	// 分页查询
 	public Page<Standard> findPageData(Pageable pageable);
-*/
+	//查询所有的取派标准
+	public List<Standard> findAll();
 }
