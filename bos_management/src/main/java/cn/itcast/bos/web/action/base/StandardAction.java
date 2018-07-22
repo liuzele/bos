@@ -30,6 +30,7 @@ public class StandardAction extends ActionSupport implements ModelDriven<Standar
 
 	// 模型驱动 封装数据
 	private Standard standard = new Standard();
+	//可恶
 
 	@Override
 	public Standard getModel() {
@@ -53,7 +54,7 @@ public class StandardAction extends ActionSupport implements ModelDriven<Standar
 	private int page;
 	private int rows;
 
-	public void setPage(int page) {
+    public void setPage(int page) {
 		this.page = page;
 	}
 

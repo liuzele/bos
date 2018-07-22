@@ -141,7 +141,7 @@
 					pageList: [30,50,100],
 					pagination : true,
 					toolbar : toolbar,
-					url : "../../data/courier.json",
+					url : "../../courier_pageQuery.action",
 					idField : 'id',
 					columns : columns,
 					onDblClickRow : doDblClickRow
@@ -157,6 +157,13 @@
 			        height: 400,
 			        resizable:false
 			    });
+				$("#save").click(function(){
+				   if($("#courierForm").form("validate")){
+                       $("#courierForm").submit();
+                   }else{
+				       $.messager.alert("警告","表单中存在非法输入项目","warning");
+                   }
+                });
 				
 			});
 		
@@ -178,7 +185,9 @@
 			</div>
 
 			<div region="center" style="overflow:auto;padding:5px;" border="false">
-				<form>
+
+				<form id="courierForm" action="../../courier_save.action" method="post">
+
 					<table class="table-edit" width="80%" align="center">
 						<tr class="title">
 							<td colspan="4">收派员信息</td>
