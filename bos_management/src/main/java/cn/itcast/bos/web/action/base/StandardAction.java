@@ -62,7 +62,7 @@ public class StandardAction extends ActionSupport implements ModelDriven<Standar
 		this.rows = rows;
 	}
 
-	// 分页列表查询
+	// 分页列表查询.
 	@Action(value = "standard_pageQuery", results = { @Result(name = "success", type = "json") })
 	public String pageQuery() {
 		// 调用业务层 ，查询数据结果

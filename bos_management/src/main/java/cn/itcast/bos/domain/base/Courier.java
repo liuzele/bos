@@ -16,6 +16,7 @@ import javax.persistence.Table;
 
 /**
  * @description:快递员
+ * 1111
  */
 @Entity
 @Table(name = "T_COURIER")
